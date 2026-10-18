@@ -211,16 +211,12 @@
 -->
 <h2>Estatísticas no GitHub</h2>
 
+<!-- Linguagens: "hide" remove linguagens secundárias (shaders, CSS/HTML, arquivos de build)
+     para que as 6 principais apareçam, incluindo Python. Para mostrar alguma de volta, tire-a do "hide". -->
 <p align="center">
-  <a href="https://github.com/kaikehttps">
-    <img height="170" src="https://github-readme-stats.vercel.app/api?username=kaikehttps&show_icons=true&rank_icon=github&locale=pt-br&bg_color=0D1117&title_color=A78BFA&icon_color=60A5FA&text_color=C9D1D9&border_color=30363D&border_radius=8" alt="Estatísticas do GitHub de kaikehttps" />
-  </a>
   <a href="https://github.com/kaikehttps?tab=repositories">
-    <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=kaikehttps&layout=compact&langs_count=6&locale=pt-br&bg_color=0D1117&title_color=A78BFA&text_color=C9D1D9&border_color=30363D&border_radius=8" alt="Linguagens mais usadas por kaikehttps" />
+    <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=kaikehttps&layout=compact&langs_count=6&hide=shaderlab,hlsl,css,html,cmake,c%2B%2B,wolfram%20language,swift,kotlin,objective-c&locale=pt-br&bg_color=0D1117&title_color=A78BFA&text_color=C9D1D9&border_color=30363D&border_radius=8" alt="Linguagens mais usadas por kaikehttps" />
   </a>
-</p>
-
-<p align="center">
   <a href="https://github.com/kaikehttps">
     <img height="170" src="https://streak-stats.demolab.com/?user=kaikehttps&locale=pt_BR&background=0D1117&border=30363D&stroke=30363D&ring=A78BFA&fire=E5484D&currStreakNum=C9D1D9&sideNums=C9D1D9&currStreakLabel=A78BFA&sideLabels=C9D1D9&dates=8B949E&border_radius=8" alt="Sequência de contribuições de kaikehttps" />
   </a>
