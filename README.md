@@ -5,11 +5,7 @@
 -->
 
 <!-- ─────────────── CABEÇALHO ─────────────── -->
-<h1 align="center">
-  <img src="assets/gengar.png" alt="Gengar" title="Gengar" height="44" />
-  Kaike Ferreira Alves
-  <img src="assets/shadow.gif" alt="Shadow the Hedgehog" title="Shadow the Hedgehog" height="44" />
-</h1>
+<h1 align="center">Kaike Alves</h1>
 
 <p align="center">
   <b>Full Stack Developer</b>
@@ -20,17 +16,17 @@
   Desenvolvendo aplicações web e mobile, do front-end ao back-end.
 </p>
 
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=kaikehttps&label=Visitas&color=7C3AED&style=flat-square&abbreviated=true" alt="Contador de visitas do perfil" />
-</p>
-
 <!-- ─────────────── SOBRE MIM ─────────────── -->
 <h2>Sobre mim</h2>
+
+<img src="assets/gengar.png" alt="Gengar" title="Gengar" align="right" width="150" />
 
 <!-- EDITAR: substitua a linha abaixo pela sua apresentação pessoal. -->
 <p>
   <sub><i>Apresentação em construção.</i></sub>
 </p>
+
+<br clear="right" />
 
 <!-- ─────────────── TECNOLOGIAS ───────────────
   Ícones: skillicons.dev · Badges: Shields.io (fundo #242938, mesmo tom dos ícones).
@@ -141,12 +137,10 @@
 </div>
 
 <!-- ─────────────── PROJETOS ───────────────
-  EDITAR em cada card:
-    NOME_DO_PROJETO · DESCRICAO_CURTA · LINK_DO_REPOSITORIO · LINK_DA_DEMO
-    Imagem (opcional): descomente a linha <img> e aponte para a captura, ex.: assets/projetos/nome.png
-    Sem demonstração? Apague o badge "Demo".
-    Badges TECNOLOGIA_X: troque pelo formato usado em Tecnologias, ex.:
-      https://img.shields.io/badge/React-242938?style=flat-square&logo=react&logoColor=61DAFB
+  Descrições e tecnologias tiradas dos próprios repositórios.
+  Imagem (opcional): descomente a linha <img> do card e aponte para uma captura, ex.: assets/projetos/nome.png
+  Se um projeto ganhar demonstração online, adicione ao lado do badge "Repositório":
+    <a href="LINK_DA_DEMO"><img src="https://img.shields.io/badge/Demo-242938?style=flat-square&logo=googlechrome&logoColor=60A5FA" alt="Demonstração" /></a>
 -->
 <h2>Projetos em destaque</h2>
 
@@ -155,53 +149,57 @@
   <tr>
     <!-- PROJETO 1 -->
     <td width="50%" valign="top">
-      <!-- <img src="assets/projetos/CAPTURA.png" alt="Captura de NOME_DO_PROJETO" width="100%" /> -->
-      <h3>NOME_DO_PROJETO</h3>
-      <p>DESCRICAO_CURTA</p>
+      <!-- <img src="assets/projetos/library-api.png" alt="Captura do Library API" width="100%" /> -->
+      <h3>Library API</h3>
+      <p>API REST para gerenciamento de biblioteca, com livros, usuários e empréstimos. Projeto acadêmico que aplica Clean Architecture, DDD e SOLID.</p>
       <p>
-        <img src="https://img.shields.io/badge/TECNOLOGIA_1-242938?style=flat-square" alt="TECNOLOGIA_1" />
-        <img src="https://img.shields.io/badge/TECNOLOGIA_2-242938?style=flat-square" alt="TECNOLOGIA_2" />
+        <img src="https://img.shields.io/badge/Node.js-242938?style=flat-square&logo=nodedotjs&logoColor=5FA04E" alt="Node.js" />
+        <img src="https://img.shields.io/badge/Express-242938?style=flat-square&logo=express&logoColor=FFFFFF" alt="Express" />
+        <img src="https://img.shields.io/badge/Prisma-242938?style=flat-square&logo=prisma&logoColor=FFFFFF" alt="Prisma" />
+        <img src="https://img.shields.io/badge/SQLite-242938?style=flat-square&logo=sqlite&logoColor=44A6E0" alt="SQLite" />
+        <img src="https://img.shields.io/badge/Jest-242938?style=flat-square&logo=jest&logoColor=C21325" alt="Jest" />
+        <img src="https://img.shields.io/badge/Swagger-242938?style=flat-square&logo=swagger&logoColor=85EA2D" alt="Swagger" />
       </p>
-      <a href="LINK_DO_REPOSITORIO"><img src="https://img.shields.io/badge/Repositório-242938?style=flat-square&logo=github&logoColor=FFFFFF" alt="Repositório de NOME_DO_PROJETO" /></a>
-      <a href="LINK_DA_DEMO"><img src="https://img.shields.io/badge/Demo-242938?style=flat-square&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNjBBNUZBIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMTQgNGg2djYiLz48cGF0aCBkPSJNMjAgNGwtOSA5Ii8%2BPHBhdGggZD0iTTE4IDE0djVhMSAxIDAgMCAxLTEgMUg1YTEgMSAwIDAgMS0xLTFWN2ExIDEgMCAwIDEgMS0xaDUiLz48L3N2Zz4%3D" alt="Demonstração de NOME_DO_PROJETO" /></a>
+      <a href="https://github.com/kaikehttps/library-api"><img src="https://img.shields.io/badge/Repositório-242938?style=flat-square&logo=github&logoColor=FFFFFF" alt="Repositório do Library API" /></a>
     </td>
     <!-- PROJETO 2 -->
     <td width="50%" valign="top">
-      <!-- <img src="assets/projetos/CAPTURA.png" alt="Captura de NOME_DO_PROJETO" width="100%" /> -->
-      <h3>NOME_DO_PROJETO</h3>
-      <p>DESCRICAO_CURTA</p>
+      <!-- <img src="assets/projetos/helpdesk.png" alt="Captura do HelpDesk" width="100%" /> -->
+      <h3>HelpDesk</h3>
+      <p>API de chamados de suporte com cadastro de técnicos e clientes, prioridades e status, e autenticação com Spring Security e JWT.</p>
       <p>
-        <img src="https://img.shields.io/badge/TECNOLOGIA_1-242938?style=flat-square" alt="TECNOLOGIA_1" />
-        <img src="https://img.shields.io/badge/TECNOLOGIA_2-242938?style=flat-square" alt="TECNOLOGIA_2" />
+        <img src="https://img.shields.io/badge/Java-242938?style=flat-square&logo=openjdk&logoColor=FFFFFF" alt="Java" />
+        <img src="https://img.shields.io/badge/Spring_Boot-242938?style=flat-square&logo=springboot&logoColor=6DB33F" alt="Spring Boot" />
+        <img src="https://img.shields.io/badge/Spring_Security-242938?style=flat-square&logo=springsecurity&logoColor=6DB33F" alt="Spring Security" />
+        <img src="https://img.shields.io/badge/JWT-242938?style=flat-square&logo=jsonwebtokens&logoColor=FB015B" alt="JWT" />
+        <img src="https://img.shields.io/badge/MySQL-242938?style=flat-square&logo=mysql&logoColor=4479A1" alt="MySQL" />
       </p>
-      <a href="LINK_DO_REPOSITORIO"><img src="https://img.shields.io/badge/Repositório-242938?style=flat-square&logo=github&logoColor=FFFFFF" alt="Repositório de NOME_DO_PROJETO" /></a>
-      <a href="LINK_DA_DEMO"><img src="https://img.shields.io/badge/Demo-242938?style=flat-square&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNjBBNUZBIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMTQgNGg2djYiLz48cGF0aCBkPSJNMjAgNGwtOSA5Ii8%2BPHBhdGggZD0iTTE4IDE0djVhMSAxIDAgMCAxLTEgMUg1YTEgMSAwIDAgMS0xLTFWN2ExIDEgMCAwIDEgMS0xaDUiLz48L3N2Zz4%3D" alt="Demonstração de NOME_DO_PROJETO" /></a>
+      <a href="https://github.com/kaikehttps/HelpDesk"><img src="https://img.shields.io/badge/Repositório-242938?style=flat-square&logo=github&logoColor=FFFFFF" alt="Repositório do HelpDesk" /></a>
     </td>
   </tr>
   <tr>
     <!-- PROJETO 3 -->
     <td width="50%" valign="top">
-      <!-- <img src="assets/projetos/CAPTURA.png" alt="Captura de NOME_DO_PROJETO" width="100%" /> -->
-      <h3>NOME_DO_PROJETO</h3>
-      <p>DESCRICAO_CURTA</p>
+      <!-- <img src="assets/projetos/clone-spotify.png" alt="Captura do Clone Spotify" width="100%" /> -->
+      <h3>Clone Spotify</h3>
+      <p>Clone da interface do Spotify feito em Flutter para a disciplina de aplicativos móveis.</p>
       <p>
-        <img src="https://img.shields.io/badge/TECNOLOGIA_1-242938?style=flat-square" alt="TECNOLOGIA_1" />
-        <img src="https://img.shields.io/badge/TECNOLOGIA_2-242938?style=flat-square" alt="TECNOLOGIA_2" />
+        <img src="https://img.shields.io/badge/Flutter-242938?style=flat-square&logo=flutter&logoColor=02569B" alt="Flutter" />
+        <img src="https://img.shields.io/badge/Dart-242938?style=flat-square&logo=dart&logoColor=0175C2" alt="Dart" />
       </p>
-      <a href="LINK_DO_REPOSITORIO"><img src="https://img.shields.io/badge/Repositório-242938?style=flat-square&logo=github&logoColor=FFFFFF" alt="Repositório de NOME_DO_PROJETO" /></a>
-      <a href="LINK_DA_DEMO"><img src="https://img.shields.io/badge/Demo-242938?style=flat-square&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNjBBNUZBIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMTQgNGg2djYiLz48cGF0aCBkPSJNMjAgNGwtOSA5Ii8%2BPHBhdGggZD0iTTE4IDE0djVhMSAxIDAgMCAxLTEgMUg1YTEgMSAwIDAgMS0xLTFWN2ExIDEgMCAwIDEgMS0xaDUiLz48L3N2Zz4%3D" alt="Demonstração de NOME_DO_PROJETO" /></a>
+      <a href="https://github.com/kaikehttps/CloneSpotify"><img src="https://img.shields.io/badge/Repositório-242938?style=flat-square&logo=github&logoColor=FFFFFF" alt="Repositório do Clone Spotify" /></a>
     </td>
     <!-- PROJETO 4 -->
     <td width="50%" valign="top">
-      <!-- <img src="assets/projetos/CAPTURA.png" alt="Captura de NOME_DO_PROJETO" width="100%" /> -->
-      <h3>NOME_DO_PROJETO</h3>
-      <p>DESCRICAO_CURTA</p>
+      <!-- <img src="assets/projetos/controle-de-estoque.png" alt="Captura do Controle de Estoque" width="100%" /> -->
+      <h3>Controle de Estoque</h3>
+      <p>Sistema de controle de estoque que eu usava no trabalho, agora open source para qualquer pessoa usar no próprio dispositivo.</p>
       <p>
-        <img src="https://img.shields.io/badge/TECNOLOGIA_1-242938?style=flat-square" alt="TECNOLOGIA_1" />
-        <img src="https://img.shields.io/badge/TECNOLOGIA_2-242938?style=flat-square" alt="TECNOLOGIA_2" />
+        <img src="https://img.shields.io/badge/React-242938?style=flat-square&logo=react&logoColor=61DAFB" alt="React" />
+        <img src="https://img.shields.io/badge/Vite-242938?style=flat-square&logo=vite&logoColor=A78BFA" alt="Vite" />
+        <img src="https://img.shields.io/badge/Tailwind_CSS-242938?style=flat-square&logo=tailwindcss&logoColor=38BDF8" alt="Tailwind CSS" />
       </p>
-      <a href="LINK_DO_REPOSITORIO"><img src="https://img.shields.io/badge/Repositório-242938?style=flat-square&logo=github&logoColor=FFFFFF" alt="Repositório de NOME_DO_PROJETO" /></a>
-      <a href="LINK_DA_DEMO"><img src="https://img.shields.io/badge/Demo-242938?style=flat-square&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNjBBNUZBIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMTQgNGg2djYiLz48cGF0aCBkPSJNMjAgNGwtOSA5Ii8%2BPHBhdGggZD0iTTE4IDE0djVhMSAxIDAgMCAxLTEgMUg1YTEgMSAwIDAgMS0xLTFWN2ExIDEgMCAwIDEgMS0xaDUiLz48L3N2Zz4%3D" alt="Demonstração de NOME_DO_PROJETO" /></a>
+      <a href="https://github.com/kaikehttps/ControledeEstoque"><img src="https://img.shields.io/badge/Repositório-242938?style=flat-square&logo=github&logoColor=FFFFFF" alt="Repositório do Controle de Estoque" /></a>
     </td>
   </tr>
 </table>
@@ -231,11 +229,20 @@
 <!-- ─────────────── CONTATO ─────────────── -->
 <h2>Contato</h2>
 
-<p align="center">
+<img src="assets/shadow.gif" alt="Shadow the Hedgehog" title="Shadow the Hedgehog" align="left" width="110" />
+
+<!-- EDITAR: frase de contato -->
+<p>
+  Quer conversar sobre um projeto, estudos ou uma oportunidade? Fale comigo por um destes canais:
+</p>
+
+<p>
   <a href="mailto:kaikebr208@gmail.com"><img src="https://img.shields.io/badge/E--mail-242938?style=for-the-badge&logo=gmail&logoColor=EA4335" alt="E-mail: kaikebr208@gmail.com" title="kaikebr208@gmail.com" /></a>
   <a href="https://www.instagram.com/kaike_alvesz/"><img src="https://img.shields.io/badge/Instagram-242938?style=for-the-badge&logo=instagram&logoColor=E4405F" alt="Instagram: @kaike_alvesz" title="@kaike_alvesz" /></a>
   <a href="https://www.linkedin.com/in/kaikeferreiraalves/"><img src="https://img.shields.io/badge/LinkedIn-242938?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0iIzBBNjZDMiIgZD0iTTIwLjQ0NyAyMC40NTJoLTMuNTU0di01LjU2OWMwLTEuMzI4LS4wMjctMy4wMzctMS44NTItMy4wMzctMS44NTMgMC0yLjEzNiAxLjQ0NS0yLjEzNiAyLjkzOXY1LjY2N0g5LjM1MVY5aDMuNDE0djEuNTYxaC4wNDZjLjQ3Ny0uOSAxLjYzNy0xLjg1IDMuMzctMS44NSAzLjYwMSAwIDQuMjY3IDIuMzcgNC4yNjcgNS40NTV2Ni4yODZ6TTUuMzM3IDcuNDMzYTIuMDYyIDIuMDYyIDAgMSAxIDAtNC4xMjUgMi4wNjIgMi4wNjIgMCAwIDEgMCA0LjEyNXpNNy4xMTkgMjAuNDUySDMuNTU1VjloMy41NjR2MTEuNDUyek0yMi4yMjUgMEgxLjc3MUMuNzkyIDAgMCAuNzc0IDAgMS43Mjl2MjAuNTQyQzAgMjMuMjI3Ljc5MiAyNCAxLjc3MSAyNGgyMC40NTFDMjMuMiAyNCAyNCAyMy4yMjcgMjQgMjIuMjcxVjEuNzI5QzI0IC43NzQgMjMuMiAwIDIyLjIyMiAwaC4wMDN6Ii8%2BPC9zdmc%2B" alt="LinkedIn: Kaike Ferreira Alves" title="Kaike Ferreira Alves" /></a>
 </p>
+
+<br clear="left" />
 
 <!-- ─────────────── RODAPÉ ─────────────── -->
 <hr />
