@@ -19,12 +19,16 @@
 <!-- ─────────────── SOBRE MIM ─────────────── -->
 <h2>Sobre mim</h2>
 
-<img src="assets/gengar.png" alt="Gengar" title="Gengar" align="right" width="150" />
+<img src="assets/gengar.gif" alt="Gengar" title="Gengar" align="right" width="150" />
 
-<!-- EDITAR: substitua a linha abaixo pela sua apresentação pessoal. -->
-<p>
-  <sub><i>Apresentação em construção.</i></sub>
-</p>
+<!-- EDITAR: apresentação pessoal -->
+👋 Olá! Sou Kaike Ferreira, estudante de Sistemas de Informação na UniCatólica de Quixadá e desenvolvedor apaixonado por tecnologia e inovação.
+
+💻 Atualmente, trabalho como **Desenvolvedor Frontend na Ottolog Express**, desenvolvendo interfaces e soluções para aplicações.
+
+🚀 Também sou fundador e Tech Lead da **ApexVet**, uma startup que desenvolve soluções tecnológicas para a gestão veterinária, utilizando inteligência artificial para otimizar processos e facilitar a rotina dos profissionais.
+
+Estou sempre buscando aprender novas tecnologias, desenvolver projetos e transformar ideias em soluções reais.
 
 <br clear="right" />
 
