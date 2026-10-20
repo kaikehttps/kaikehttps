@@ -5,8 +5,8 @@ e são gerados por [`scripts/build_assets.py`](../scripts/build_assets.py).
 
 ## Fontes (embutidas nos SVGs, em subconjunto)
 
-- **Space Grotesk**, de Florian Karsten, sob a [SIL Open Font License 1.1](https://openfontlicense.org), distribuída via [Fontsource](https://fontsource.org/fonts/space-grotesk)
-- **JetBrains Mono**, da JetBrains, sob a [SIL Open Font License 1.1](https://openfontlicense.org), distribuída via [Fontsource](https://fontsource.org/fonts/jetbrains-mono)
+- **IBM Plex Sans**, da IBM, sob a [SIL Open Font License 1.1](https://openfontlicense.org), distribuída via [Fontsource](https://fontsource.org/fonts/ibm-plex-sans)
+- **IBM Plex Mono**, da IBM, sob a [SIL Open Font License 1.1](https://openfontlicense.org), distribuída via [Fontsource](https://fontsource.org/fonts/ibm-plex-mono)
 
 ## Ícones
 

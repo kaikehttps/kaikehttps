@@ -2,7 +2,7 @@
   ┌─────────────────────────────────────────────────────────────────┐
   │  README do perfil · github.com/kaikehttps                       │
   │  Identidade: espaço profundo · roxo #8B5CF6 · azul #3B82F6       │
-  │  Tipografia dos SVGs: Space Grotesk + JetBrains Mono (embutidas) │
+  │  Tipografia dos SVGs: IBM Plex Sans + IBM Plex Mono (embutidas) │
   │  Recursos visuais em assets/ · créditos em assets/CREDITS.md     │
   │  Para editar: procure por "EDITAR" neste arquivo.                │
   └─────────────────────────────────────────────────────────────────┘
@@ -140,6 +140,6 @@ Hoje trabalho como **Desenvolvedor Frontend na Ottolog Express** e sigo construi
 </picture>
 
 <!--
-  Créditos: fontes Space Grotesk e JetBrains Mono (SIL OFL 1.1) · ícones Simple Icons (CC0) e Devicon (MIT).
+  Créditos: fontes IBM Plex Sans e IBM Plex Mono (SIL OFL 1.1) · ícones Simple Icons (CC0) e Devicon (MIT).
   Lista completa em assets/CREDITS.md.
 -->

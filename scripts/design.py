@@ -18,14 +18,15 @@ C = {
 LIGHT = {"text": "#14161D", "text2": "#424A5C", "text3": "#5B6375", "text4": "#8A92A3",
          "b2": "#2563EB", "v2": "#6D28D9", "v1": "#5B21B6"}
 
+# Internal keys: "SG" = sans (IBM Plex Sans), "JBM" = mono (IBM Plex Mono).
 FAM = {
-    "SG": "SG,'Space Grotesk','Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif",
-    "JBM": "JBM,'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace",
+    "SG": "SG,'IBM Plex Sans','Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif",
+    "JBM": "JBM,'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace",
 }
 FONT_URLS = {
-    ("SG", 500): "https://cdn.jsdelivr.net/npm/@fontsource/space-grotesk@5.2.10/files/space-grotesk-latin-500-normal.woff2",
-    ("SG", 700): "https://cdn.jsdelivr.net/npm/@fontsource/space-grotesk@5.2.10/files/space-grotesk-latin-700-normal.woff2",
-    ("JBM", 500): "https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono@5.2.8/files/jetbrains-mono-latin-500-normal.woff2",
+    ("SG", 500): "https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-sans@5.2.8/files/ibm-plex-sans-latin-500-normal.woff2",
+    ("SG", 700): "https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-sans@5.2.8/files/ibm-plex-sans-latin-700-normal.woff2",
+    ("JBM", 500): "https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-mono@5.2.7/files/ibm-plex-mono-latin-500-normal.woff2",
 }
 SI = "https://cdn.jsdelivr.net/npm/simple-icons@16.33.0/icons/{}.svg"
 DV = "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/{0}/{0}-plain.svg"
@@ -53,7 +54,7 @@ class Assets:
         from fontTools.ttLib import TTFont  # noqa: WPS433
         self.font_b64, self.metrics, self._font_paths, self._subsets = {}, {}, {}, {}
         for key, url in FONT_URLS.items():
-            path = self.fetch(url, f"font-{key[0]}-{key[1]}.woff2")
+            path = self.fetch(url, url.rsplit("/", 1)[1])
             self._font_paths[key] = path
             raw = open(path, "rb").read()
             self.font_b64[key] = base64.b64encode(raw).decode()
