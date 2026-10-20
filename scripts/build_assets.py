@@ -9,7 +9,6 @@ edite e rode de novo. Fontes (SIL OFL) e ícones (Simple Icons CC0 / Devicon MIT
 baixados uma única vez para uma pasta de cache temporária. Créditos: assets/CREDITS.md.
 """
 import argparse
-import base64
 import math
 import os
 import random
@@ -24,11 +23,9 @@ from design import (C, LIGHT, T, Assets, Doc, card_frame, fx, glow_filter, gradi
 _ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
 _ap.add_argument("--repo", default=os.path.dirname(HERE), help="raiz do repositório (padrão: pasta acima de scripts/)")
 _ap.add_argument("--cache", default=os.path.join(tempfile.gettempdir(), "kaikehttps-readme-cache"))
-_ap.add_argument("--shot", default=os.path.join(HERE, "source", "rotagas-dashboard.jpg"),
-                 help="captura do painel do Rotagas embutida no card do projeto")
 _ap.add_argument("--pylibs", default=None, help="pasta extra com fonttools/brotli, se não estiverem instalados")
 _args = _ap.parse_args()
-REPO, SHOT = _args.repo, _args.shot
+REPO = _args.repo
 A = Assets(_args.cache, _args.pylibs)
 OUT = os.path.join(REPO, "assets")
 
@@ -297,69 +294,6 @@ def panel(name, idx, title, caption, keys, dim=False, accent=None):
     d.save(path("stack", f"{name}.svg"))
 
 
-# =============================================================================== API FLOW (POSTMAN)
-METHOD = {"GET": "#6BDD9A", "POST": "#FFD166", "PUT": "#74AEF6", "DELETE": "#F79A8E"}
-
-
-def api_request():
-    W, H = 410, 300
-    d = Doc(A, W, H, "Postman — requisições de exemplo com rotas reais da HelpDesk API: POST /login, "
-                     "GET /chamados com token JWT e PUT /chamados/{id}.")
-    card_frame(d, W, H, glow="#FF6C37", glow_pos=(.05, 0), seed=91, nstars=14)
-    d.icon("si:postman", 22, 21, 22, "#FF6C37")
-    d.text(52, 38, "Postman", "SG", 700, 17, C["text"])
-    d.text(W - 22, 37, "REST · JWT", "JBM", 500, 10.5, C["text3"], anchor="end", ls=1)
-    d.text(22, 61, "Rotas reais da HelpDesk API (Spring Boot)", "SG", 500, 11.5, C["text3"])
-    rows = [("POST", "/login", "credenciais → token JWT no header"),
-            ("GET", "/chamados", "Authorization: Bearer ‹token›"),
-            ("PUT", "/chamados/{id}", "atualiza status e prioridade")]
-    y = 78
-    # flow rail with travelling packet
-    d.add(f'<path d="M34 {y + 52}V{y + 64}M34 {y + 116}V{y + 128}" stroke="{C["line2"]}" stroke-width="1.5"/>')
-    for i, (m, p, sub) in enumerate(rows):
-        yy = y + i * 64
-        d.add(f'<rect x="22" y="{yy}" width="{W - 44}" height="52" rx="12" fill="#0E1119" stroke="{C["line2"]}"/>')
-        mc = METHOD[m]
-        mw = A.width(m, "JBM", 500, 10.5, .6) + 16
-        d.add(f'<rect x="34" y="{yy + 15}" width="{fx(mw)}" height="22" rx="6" fill="{mc}" fill-opacity=".12" '
-              f'stroke="{mc}" stroke-opacity=".45"/>')
-        d.text(34 + mw / 2, yy + 30, m, "JBM", 500, 10.5, mc, anchor="middle", ls=.6)
-        d.text(34 + mw + 12, yy + 23, p, "JBM", 500, 12.5, C["text"])
-        d.text(34 + mw + 12, yy + 40, sub, "SG", 500, 11, C["text3"])
-        d.add(f'<g transform="translate({W - 50} {yy + 18})"><rect width="16" height="16" rx="5" fill="#FF6C37" '
-              f'fill-opacity=".14"/><path d="M5.5 4.5l6 3.5-6 3.5z" fill="#FF6C37"/></g>')
-    d.style("@keyframes pk{0%{transform:translateY(0);opacity:0}8%{opacity:1}92%{opacity:1}100%{transform:translateY(128px);"
-            "opacity:0}}.pk{animation:pk 4.5s ease-in-out infinite}")
-    d.add(f'<circle class="pk" cx="34" cy="{y + 2}" r="3" fill="#FF6C37"/>')
-    d.text(22, H - 22, "montar → enviar → inspecionar → ajustar", "JBM", 500, 10, C["text4"], ls=.4)
-    d.save(path("stack", "api-requisicao.svg"))
-
-
-def api_validation():
-    W, H = 410, 300
-    items = [("Status HTTP", "2xx de sucesso, 401/403 e 404"),
-             ("Autenticação", "token JWT e rotas protegidas"),
-             ("Contrato da resposta", "corpo JSON coerente com os DTOs"),
-             ("Perfis de acesso", "ADMIN · TÉCNICO · CLIENTE"),
-             ("Erros de validação", "mensagens e campos obrigatórios")]
-    d = Doc(A, W, H, "O que eu verifico ao testar uma API: " + "; ".join(f"{a} ({b})" for a, b in items))
-    card_frame(d, W, H, glow=C["v3"], glow_pos=(.95, 0), seed=77, nstars=14)
-    d.icon("c:check", 22, 21, 22, C["v2"])
-    d.text(52, 38, "O que eu verifico", "SG", 700, 17, C["text"])
-    d.text(W - 22, 37, "CHECKLIST", "JBM", 500, 10.5, C["text3"], anchor="end", ls=1)
-    d.text(22, 61, "Pontos que confiro em cada endpoint", "SG", 500, 11.5, C["text3"])
-    for i, (a, b) in enumerate(items):
-        y = 92 + i * 41
-        d.add(f'<circle cx="31" cy="{y - 4}" r="9" fill="{C["v3"]}" fill-opacity=".12" stroke="{C["v2"]}" '
-              f'stroke-opacity=".5"/><path d="M27 {y - 4}l2.8 2.8 5-5.2" fill="none" stroke="{C["v1"]}" '
-              f'stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>')
-        d.text(50, y - 1, a, "SG", 700, 13, C["text"])
-        d.text(50, y + 15, b, "JBM", 500, 10.5, C["text3"])
-        if i < len(items) - 1:
-            d.add(f'<path d="M50 {y + 25}H{W - 22}" stroke="{C["line"]}"/>')
-    d.save(path("stack", "api-validacao.svg"))
-
-
 # =============================================================================== PROJECTS
 def tech_chips(d, x, y, keys, maxw, h=22, gap=6):
     cx, cy = x, y
@@ -375,176 +309,6 @@ def tech_chips(d, x, y, keys, maxw, h=22, gap=6):
             d.text(cx + 8 + 12 + 6, cy + h / 2 + 3.8, label, "SG", 500, 10.5, C["text2"])
         cx += w + gap
     return cy + h
-
-
-def caption(d, x, y, text, maxw=330, size=9.5, lh=14):
-    lines = A.wrap(text, maxw, "JBM", 500, size)
-    d.lines(x, y, lines, lh, fam="JBM", wt=500, size=size, fill=C["text4"])
-    return len(lines)
-
-
-def icon_row(d, x, y, keys, size=30, gap=8):
-    for i, k in enumerate(keys):
-        label, ik, col = T[k]
-        xx = x + i * (size + gap)
-        d.add(f'<rect x="{xx}" y="{y}" width="{size}" height="{size}" rx="9" fill="#121521" stroke="{C["line2"]}"/>')
-        d.icon(ik, xx + size * .22, y + size * .22, size * .56, col)
-
-
-def browser(d, x, y, w, h, url, img_b64):
-    bar = 26
-    cid = d.uid("bc")
-    d.d(f'<clipPath id="{cid}"><rect x="{x}" y="{y}" width="{w}" height="{h}" rx="12"/></clipPath>')
-    gid = glow_filter(d, 18)
-    d.add(f'<rect x="{x + 18}" y="{y + 26}" width="{w - 36}" height="{h - 30}" rx="16" fill="#7C3AED" opacity=".42" '
-          f'filter="url(#{gid})"/>')
-    d.add(f'<g clip-path="url(#{cid})"><rect x="{x}" y="{y}" width="{w}" height="{h}" fill="#0B0D13"/>'
-          f'<image href="data:image/jpeg;base64,{img_b64}" x="{x}" y="{y + bar}" width="{w}" height="{fx(w / 1.6)}" '
-          f'preserveAspectRatio="xMidYMin slice"/><rect x="{x}" y="{y}" width="{w}" height="{bar}" fill="#11141D"/>'
-          f'<path d="M{x} {y + bar}H{x + w}" stroke="{C["line2"]}"/></g>')
-    for i, c in enumerate(("#F87171", "#FBBF24", "#34D399")):
-        d.add(f'<circle cx="{x + 14 + i * 11}" cy="{y + 13}" r="3" fill="{c}" opacity=".75"/>')
-    uw = A.width(url, "JBM", 500, 9.5) + 26
-    ux = x + w / 2 - uw / 2
-    d.add(f'<rect x="{fx(ux)}" y="{y + 6}" width="{fx(uw)}" height="14" rx="7" fill="#0B0D13" stroke="{C["line2"]}"/>')
-    d.text(x + w / 2 + 5, y + 16.4, url, "JBM", 500, 9.5, C["text3"], anchor="middle")
-    d.add(f'<circle cx="{fx(ux + 9)}" cy="{y + 13}" r="2.4" fill="none" stroke="{C["text3"]}" stroke-width="1"/>')
-    d.add(f'<rect x="{x + .5}" y="{y + .5}" width="{w - 1}" height="{h - 1}" rx="11.5" fill="none" stroke="#2C3347"/>')
-
-
-def featured_rotagas(mobile=False):
-    img = base64.b64encode(open(SHOT, "rb").read()).decode()
-    title_alt = ("Rotagas — SaaS para distribuidoras de gás: painel do gerente com mapa ao vivo, alertas operacionais, "
-                 "cockpit comercial, app do motoboy e landing page, com dados simulados. React, TypeScript, Tailwind CSS, "
-                 "Leaflet, Chart.js, Framer Motion e Vite.")
-    keys = ["react", "ts", "tailwind", "leaflet", "chartjs", "framer", "vite"]
-    desc = ("Painel do gerente com mapa ao vivo, alertas operacionais, cockpit comercial e app do motoboy — "
-            "além da landing page do produto. Demonstração com dados simulados.")
-    cap = "React · TypeScript · Tailwind · Leaflet · Chart.js · Framer Motion · Vite"
-    head = ("PRODUTO · DEMO AO VIVO", "Rotagas", "SaaS para distribuidoras de gás")
-    featured(mobile, "rotagas", title_alt, head, desc, keys, cap, "#34D399", "#86EFAC",
-             lambda d, x, y, w, h: browser(d, x, y, w, h, "rotas-navy.vercel.app", img), (C["v3"], C["b3"]))
-
-
-def featured(mobile, name, alt, head, desc, keys, cap, dot, over_col, visual, border, visual_h=(292, 242),
-             title_size=(40, 36), square_dot=False):
-    """Featured project card: text column + visual (desktop) / visual on top (mobile)."""
-    over, title, sub = head
-    if not mobile:
-        W, H = 846, 344
-        d = Doc(A, W, H, alt)
-        card_frame(d, W, H, glow=border[0], glow_pos=(.75, .1), seed=len(name), nstars=30)
-        gradient_border(d, W, H, 18, border[0], border[1], .8)
-        x0 = 34
-        mark(d, x0 + 4, 50, dot, square_dot)
-        d.text(x0 + 16, 54, over, "JBM", 500, 10.5, over_col, ls=1.8)
-        d.text(x0 - 2, 102, title, "SG", 700, title_size[0], C["text"], ls=-1)
-        d.text(x0, 130, sub, "SG", 500, 15.5, C["v1"])
-        lines = A.wrap(desc, 318, "SG", 500, 13.5)
-        d.lines(x0, 164, lines, 21, fam="SG", wt=500, size=13.5, fill=C["text2"])
-        iy = 164 + (len(lines) - 1) * 21 + 22
-        icon_row(d, x0, iy, keys, size=30, gap=7)
-        caption(d, x0, iy + 50, cap, maxw=330)
-        visual(d, 392, 26, 426, visual_h[0])
-    else:
-        W = 410
-        lines = A.wrap(desc, W - 48, "SG", 500, 13.5)
-        caps = A.wrap(cap, W - 48, "JBM", 500, 9.5)
-        y0 = 20 + visual_h[1] + 38
-        dy = y0 + 96 + (len(lines) - 1) * 21
-        H = dy + 22 + 30 + 20 + (len(caps) - 1) * 14 + 24
-        d = Doc(A, W, H, alt)
-        card_frame(d, W, H, glow=border[0], glow_pos=(.5, .1), seed=len(name), nstars=24)
-        gradient_border(d, W, H, 18, border[0], border[1], .8)
-        visual(d, 20, 20, W - 40, visual_h[1])
-        mark(d, 28, y0 - 4, dot, square_dot)
-        d.text(40, y0, over, "JBM", 500, 10.5, over_col, ls=1.8)
-        d.text(22, y0 + 42, title, "SG", 700, title_size[1], C["text"], ls=-1)
-        d.text(24, y0 + 68, sub, "SG", 500, 15, C["v1"])
-        d.lines(24, y0 + 96, lines, 21, fam="SG", wt=500, size=13.5, fill=C["text2"])
-        icon_row(d, 24, dy + 22, keys, size=30, gap=7)
-        caption(d, 24, dy + 22 + 30 + 20, cap, maxw=W - 48)
-    d.save(path("projects", f"{name}-mobile.svg" if mobile else f"{name}.svg"))
-
-
-def mark(d, cx, cy, color, square=False):
-    if square:
-        d.add(f'<rect x="{cx - 4}" y="{cy - 4}" width="8" height="8" rx="2" fill="{color}"/>')
-    else:
-        live_dot(d, cx, cy, color)
-
-
-def node(d, x, y, w, h, ik, col, title, sub, mono_title=True):
-    d.add(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="12" fill="#0F121B" stroke="{C["line2"]}"/>')
-    d.add(f'<rect x="{x + 12}" y="{y + (h - 30) / 2}" width="30" height="30" rx="9" fill="{col}" fill-opacity=".12"/>')
-    d.icon(ik, x + 18, y + (h - 18) / 2, 18, col)
-    avail = w - 52 - 10
-    if A.width(sub, "SG", 500, 10.5) <= avail:
-        d.text(x + 52, y + h / 2 - 3, title, "JBM" if mono_title else "SG", 500, 11.5, C["text"])
-        d.text(x + 52, y + h / 2 + 13, sub, "SG", 500, 10.5, C["text3"])
-    else:
-        d.text(x + 52, y + 22, title, "JBM" if mono_title else "SG", 500, 11.5, C["text"])
-        d.lines(x + 52, y + 38, A.wrap(sub, avail, "SG", 500, 10)[:2], 13, fam="SG", wt=500, size=10, fill=C["text3"])
-
-
-def featured_gameshelf(mobile=False):
-    alt = ("GameShelf Ceará — monorepo full stack com catálogo, biblioteca pessoal e avaliações de jogos. "
-           "Arquitetura: interface React com TanStack Query, API NestJS com JWT e refresh token rotativo, "
-           "PostgreSQL via Prisma e CI no GitHub Actions com testes e2e via Testcontainers.")
-    keys = ["ts", "nest", "react", "rq", "pg", "prisma", "docker", "actions"]
-    desc = ("Catálogo, biblioteca pessoal e avaliações de jogos. API NestJS com JWT e refresh token rotativo, "
-            "PostgreSQL via Prisma e testes e2e com Testcontainers rodando no CI.")
-    cap = "TypeScript · NestJS · React · TanStack Query · PostgreSQL · Prisma · Docker · GitHub Actions"
-    head = ("FULL STACK · MONOREPO", "GameShelf Ceará", "TypeScript de ponta a ponta")
-    featured(mobile, "gameshelf", alt, head, desc, keys, cap, C["b2"], C["b1"],
-             lambda d, x, y, w, h: arch(d, x, y, w, h), (C["b3"], C["v3"]), visual_h=(292, 292),
-             title_size=(36, 32), square_dot=True)
-
-
-def arch(d, x, y, w, h=286):
-    """Architecture diagram: web -> api -> postgres + CI pipeline."""
-    d.add(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="14" fill="#090B11" stroke="#252B3D"/>')
-    # dotted grid
-    pid = d.uid("dots")
-    d.d(f'<pattern id="{pid}" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".8" '
-        f'fill="#1F2536"/></pattern>')
-    d.add(f'<rect x="{x + 1}" y="{y + 1}" width="{w - 2}" height="{h - 2}" rx="13" fill="url(#{pid})"/>')
-    d.text(x + 16, y + 24, "ARQUITETURA", "JBM", 500, 9.5, C["text4"], ls=1.6)
-    nw = (w - 32 - 34) / 2
-    n1x, n2x, ny = x + 16, x + 16 + nw + 34, y + 40
-    node(d, n1x, ny, nw, 62, "si:react", "#61DAFB", "apps/web", "React · TanStack Query")
-    node(d, n2x, ny, nw, 62, "si:nestjs", "#EA2845", "apps/api", "NestJS · JWT + refresh")
-    node(d, n2x, ny + 92, nw, 62, "si:postgresql", "#6E9BEA", "PostgreSQL", "Prisma · triggers")
-    node(d, n1x, ny + 92, nw, 62, "si:swagger", "#85EA2D", "OpenAPI", "documentação Swagger")
-    d.style("@keyframes flow{to{stroke-dashoffset:-20}}.flow{animation:flow 1.2s linear infinite}")
-    ay = ny + 31
-    d.add(f'<path class="flow" d="M{fx(n1x + nw + 4)} {ay}H{fx(n2x - 6)}" stroke="{C["b2"]}" stroke-width="1.6" '
-          f'stroke-dasharray="4 6" fill="none"/><path d="M{fx(n2x - 10)} {ay - 4}l5 4-5 4" fill="none" '
-          f'stroke="{C["b2"]}" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>')
-    d.text(n1x + nw + 17, ay - 8, "HTTP", "JBM", 500, 8.5, C["text3"], anchor="middle")
-    vx = n2x + nw / 2
-    d.add(f'<path class="flow" d="M{fx(vx)} {ny + 66}V{ny + 86}" stroke="{C["v2"]}" stroke-width="1.6" '
-          f'stroke-dasharray="4 6" fill="none"/>')
-    d.add(f'<path class="flow" d="M{fx(n2x - 4)} {ny + 123}H{fx(n1x + nw + 6)}" stroke="{C["text4"]}" '
-          f'stroke-width="1.3" stroke-dasharray="3 6" fill="none"/>')
-    # CI pipeline
-    cy = ny + 172
-    d.add(f'<rect x="{x + 16}" y="{cy}" width="{w - 32}" height="58" rx="12" fill="#0F121B" stroke="{C["line2"]}"/>')
-    d.icon("si:githubactions", x + 28, cy + 10, 16, "#3B95FF")
-    d.text(x + 52, cy + 22, "CI · GitHub Actions", "JBM", 500, 10.5, C["text"])
-    d.icon("si:docker", x + w - 44, cy + 9, 18, "#2496ED")
-    d.text(x + w - 50, cy + 22, "Testcontainers", "JBM", 500, 9, C["text3"], anchor="end")
-    steps = ["lint", "tipos", "testes", "e2e", "build"]
-    sx = x + 28
-    avail = w - 56
-    sw = (avail - 4 * 14) / 5
-    for i, s in enumerate(steps):
-        xx = sx + i * (sw + 14)
-        d.add(f'<rect x="{fx(xx)}" y="{cy + 32}" width="{fx(sw)}" height="18" rx="9" fill="{C["v3"]}" fill-opacity=".1" '
-              f'stroke="{C["v2"]}" stroke-opacity=".35"/>')
-        d.text(xx + sw / 2, cy + 44.5, s, "JBM", 500, 9.5, C["v1"], anchor="middle")
-        if i < 4:
-            d.add(f'<path d="M{fx(xx + sw + 4)} {cy + 41}h6" stroke="{C["text4"]}" stroke-width="1.2"/>')
 
 
 # ----------------------------------------------------------------------------- compact cards + motifs
@@ -668,15 +432,6 @@ def button(name, key, label, sub, w=200, h=58, sub_size=10):
     d.save(path("buttons", f"{name}.svg"))
 
 
-def link_button(name, ik, col, label, w=196, h=44):
-    d = Doc(A, w, h, label)
-    card_frame(d, w, h, r=12, glow=col, glow_pos=(0, .5), nstars=0)
-    d.icon(ik, 16, (h - 16) / 2, 16, col)
-    d.text(42, h / 2 + 4.5, label, "SG", 700, 13, C["text"])
-    d.icon("c:arrow", w - 26, (h - 13) / 2, 13, C["text3"])
-    d.save(path("buttons", f"{name}.svg"))
-
-
 # =============================================================================== FOOTER
 def footer(mobile=False):
     W, H = (846, 210) if not mobile else (420, 236)
@@ -718,10 +473,9 @@ def main():
     hero()
     hero(mobile=True)
     for args in [("sobre", "01 · QUEM SOU", "Sobre mim"), ("experiencia", "02 · TRAJETÓRIA", "Experiência"),
-                 ("stack", "03 · FERRAMENTAS", "Stack & ferramentas"), ("projetos", "04 · VITRINE", "Projetos em destaque"),
+                 ("stack", "03 · FERRAMENTAS", "Stack & ferramentas"), ("projetos", "04 · VITRINE", "Projetos"),
                  ("atividade", "05 · GITHUB", "Atividade no GitHub"), ("contato", "06 · CONEXÃO", "Vamos conversar?")]:
         header(*args)
-    header("apis", "03.1 · POSTMAN", "Como eu valido APIs", sub=True)
 
     experience("ottolog", "EXPERIÊNCIA ATUAL", "Ottolog Express", "Desenvolvedor Frontend",
                "Desenvolvimento de interfaces e soluções para as aplicações da empresa.",
@@ -746,13 +500,6 @@ def main():
           ["next", "angular", "styled", "rn", "expo", "redux", "zustand", "firebase"], dim=True, accent=C["text3"])
     T["styled"] = ("styled-components", "si:styledcomponents", "#DB7093")
 
-    api_request()
-    api_validation()
-
-    featured_rotagas()
-    featured_rotagas(mobile=True)
-    featured_gameshelf()
-    featured_gameshelf(mobile=True)
     cards = [
         ("library-api", "Library API",
          "API REST de biblioteca — livros, usuários e empréstimos — com Clean Architecture, DDD e padrões "
@@ -780,12 +527,6 @@ def main():
         h = max(compact_height(c[2], c[3]) for c in pair)
         for c in pair:
             compact(*c, H=h)
-
-    link_button("rotagas-painel", "c:play", "#34D399", "Painel ao vivo")
-    link_button("rotagas-landing", "c:globe", C["b2"], "Landing page")
-    link_button("rotagas-codigo", "si:github", "#F5F5F7", "Código do painel")
-    link_button("rotagas-codigo-landing", "si:github", "#F5F5F7", "Código da landing")
-    link_button("gameshelf-codigo", "si:github", "#F5F5F7", "Ver código no GitHub", w=230)
 
     button("github", "github", "GitHub", "@kaikehttps")
     button("linkedin", "linkedin", "LinkedIn", "kaikeferreiraalves")

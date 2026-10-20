@@ -24,16 +24,12 @@
   </picture>
 </p>
 
-<a href="https://giphy.com/gifs/RJy4FQlLbxDz4kJ6GF"><img src="https://media.giphy.com/media/RJy4FQlLbxDz4kJ6GF/giphy.gif" align="right" width="28%" alt="Eclipse animado em tons de roxo e azul — GIF de Erica Anderson via GIPHY"></a>
-
 <!-- EDITAR: apresentação pessoal -->
 Olá! Sou **Kaike Ferreira**, estudante de Sistemas de Informação na UniCatólica de Quixadá e desenvolvedor apaixonado por tecnologia e inovação.
 
 Atuo no desenvolvimento de interfaces e aplicações, transformando ideias em soluções digitais. Também sou **fundador e Tech Lead da ApexVet**, uma startup que desenvolve tecnologia para modernizar a gestão veterinária, explorando inteligência artificial para facilitar a rotina dos profissionais.
 
 Hoje trabalho como **Desenvolvedor Frontend na Ottolog Express** e sigo construindo projetos, aprimorando minhas habilidades e aprendendo novas tecnologias.
-
-<br clear="right">
 
 <!-- ═══════════════════════════ 02 · EXPERIÊNCIA ═══════════════════════════ -->
 <p align="center">
@@ -72,59 +68,13 @@ Hoje trabalho como **Desenvolvedor Frontend na Ottolog Express** e sigo construi
   <img src="assets/stack/radar.svg" width="410" alt="No radar, ainda fora dos repositórios públicos: Next.js, Angular, styled-components, React Native, Expo, Redux, Zustand e Firebase">
 </p>
 
-<!-- 03.1 · Postman: fluxo de validação de APIs (rotas reais da HelpDesk API) -->
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: light)" srcset="assets/sections/apis-light.svg">
-    <img src="assets/sections/apis.svg" width="600" alt="03.1 · Postman — Como eu valido APIs">
-  </picture>
-</p>
-
-<p align="center">
-  <img src="assets/stack/api-requisicao.svg" width="410" alt="Postman: POST /login (credenciais e token JWT), GET /chamados com Authorization Bearer e PUT /chamados/{id} — rotas reais da HelpDesk API">
-  <img src="assets/stack/api-validacao.svg" width="410" alt="O que eu verifico: status HTTP, autenticação com JWT, contrato da resposta, perfis de acesso e erros de validação">
-</p>
-
 <!-- ═══════════════════════════ 04 · PROJETOS ═══════════════════════════ -->
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: light)" srcset="assets/sections/projetos-light.svg">
-    <img src="assets/sections/projetos.svg" width="600" alt="04 · Vitrine — Projetos em destaque">
+    <img src="assets/sections/projetos.svg" width="600" alt="04 · Vitrine — Projetos">
   </picture>
 </p>
-
-<!-- Rotagas: painel + landing page publicados na Vercel -->
-<p align="center">
-  <a href="https://rotas-navy.vercel.app">
-    <picture>
-      <source media="(max-width: 600px)" srcset="assets/projects/rotagas-mobile.svg">
-      <img src="assets/projects/rotagas.svg" width="100%" alt="Rotagas — SaaS para distribuidoras de gás: painel do gerente com mapa ao vivo, alertas operacionais, cockpit comercial, app do motoboy e landing page, com dados simulados.">
-    </picture>
-  </a>
-</p>
-<p align="center">
-  <a href="https://rotas-navy.vercel.app"><img src="assets/buttons/rotagas-painel.svg" height="44" alt="Abrir o painel ao vivo do Rotagas"></a>
-  <a href="https://rotagas-divulgar.vercel.app"><img src="assets/buttons/rotagas-landing.svg" height="44" alt="Abrir a landing page do Rotagas"></a>
-  <a href="https://github.com/kaikehttps/Rotas"><img src="assets/buttons/rotagas-codigo.svg" height="44" alt="Código do painel no GitHub"></a>
-  <a href="https://github.com/kaikehttps/Rotagas_divulgar"><img src="assets/buttons/rotagas-codigo-landing.svg" height="44" alt="Código da landing page no GitHub"></a>
-</p>
-
-<br>
-
-<!-- GameShelf Ceará: monorepo full stack -->
-<p align="center">
-  <a href="https://github.com/kaikehttps/GameShelf_Ceara">
-    <picture>
-      <source media="(max-width: 600px)" srcset="assets/projects/gameshelf-mobile.svg">
-      <img src="assets/projects/gameshelf.svg" width="100%" alt="GameShelf Ceará — monorepo full stack com catálogo, biblioteca pessoal e avaliações de jogos: React e TanStack Query, API NestJS com JWT e refresh token rotativo, PostgreSQL via Prisma e CI no GitHub Actions com Testcontainers.">
-    </picture>
-  </a>
-</p>
-<p align="center">
-  <a href="https://github.com/kaikehttps/GameShelf_Ceara"><img src="assets/buttons/gameshelf-codigo.svg" height="44" alt="Ver o código do GameShelf Ceará no GitHub"></a>
-</p>
-
-<br>
 
 <!-- Cards compactos: cada card abre o repositório -->
 <p align="center">
@@ -190,7 +140,6 @@ Hoje trabalho como **Desenvolvedor Frontend na Ottolog Express** e sigo construi
 </picture>
 
 <!--
-  Créditos: GIF "Pink Glow" de Erica Anderson (GIPHY, carregado direto do GIPHY) ·
-  fontes Space Grotesk e JetBrains Mono (SIL OFL 1.1) · ícones Simple Icons (CC0) e Devicon (MIT).
+  Créditos: fontes Space Grotesk e JetBrains Mono (SIL OFL 1.1) · ícones Simple Icons (CC0) e Devicon (MIT).
   Lista completa em assets/CREDITS.md.
 -->

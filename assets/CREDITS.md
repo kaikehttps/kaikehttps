@@ -16,12 +16,7 @@ e são gerados por [`scripts/build_assets.py`](../scripts/build_assets.py).
 
 ## GIFs
 
-- **"Pink Glow" (eclipse)**, de [Erica Anderson](https://giphy.com/ericaofanderson), via [GIPHY](https://giphy.com/gifs/RJy4FQlLbxDz4kJ6GF). É exibido direto do GIPHY e não fica hospedado neste repositório.
 - **Gengar** (Pokémon © Nintendo / Creatures Inc. / GAME FREAK inc.) e **Shadow the Hedgehog** (© SEGA): arquivos escolhidos pelo dono do perfil para uso pessoal de fã, apenas redimensionados (`characters/`).
-
-## Captura de tela
-
-- Painel do **Rotagas**, capturado da demonstração pública [rotas-navy.vercel.app](https://rotas-navy.vercel.app), projeto do próprio autor, com dados simulados.
 
 ## Cards dinâmicos (gerados em tempo real)
 
